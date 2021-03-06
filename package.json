@@ -1,0 +1,11 @@
+{
+  "name": "visibility-checker",
+  "version": "1.0.0",
+  "devDependencies": {
+    "jasmine": "^3.6.4",
+    "karma": "^6.1.1"
+  },
+  "scripts": {
+    "test": "jasmine"
+  }
+}
