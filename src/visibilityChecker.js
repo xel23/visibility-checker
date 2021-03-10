@@ -16,7 +16,7 @@ function visibilityChecker(el, params = {}) {
             for (const parent of parents(el)) {
                 const isElement = parent === el;
                 const style = isElement ? styles : elWindow.getComputedStyle(parent);
-                if (parseFloat(styles.opacity) < params.allowedOpacity ? params.allowedOpacity : 1) {
+                if (parseFloat(styles.opacity) < (params.allowedOpacity ? params.allowedOpacity : 1)) {
                     return false;
                 }
                 if (style.display === 'contents') {
