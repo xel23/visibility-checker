@@ -1,4 +1,4 @@
-function visibilityChecker(el, params = null) {
+function visibilityChecker(el, params = {}) {
     if (!el) {
         throw "No element";
     }
