@@ -16,7 +16,7 @@ function visibilityChecker(el, params = null) {
             for (const parent of parents(el)) {
                 const isElement = parent === el;
                 const style = isElement ? styles : elWindow.getComputedStyle(parent);
-                if (style.opacity === '0') {
+                if (parseFloat(styles.opacity) < params.allowedOpacity ? params.allowedOpacity : 1) {
                     return false;
                 }
                 if (style.display === 'contents') {
@@ -37,7 +37,7 @@ function visibilityChecker(el, params = null) {
             styles.visibility === 'hidden' ||
             styles.width === '0' ||
             styles.height === '0' ||
-            (params ? styles.opacity < params.allowedOpacity : styles.opacity < 1) ||
+            (params ? parseFloat(styles.opacity) < params.allowedOpacity : parseFloat(styles.opacity) < 1) ||
             el.offsetHeight === 0 ||
             el.offsetWidth === 0 ||
             elRect.height === 0 ||
