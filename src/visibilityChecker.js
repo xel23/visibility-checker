@@ -32,7 +32,7 @@ function visibilityChecker(el, params = {}) {
         }
 
         return !(
-            !!elWindow ||
+            !elWindow ||
             styles.display === 'none' ||
             styles.visibility === 'hidden' ||
             styles.width === '0' ||
